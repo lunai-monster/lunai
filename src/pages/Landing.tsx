@@ -27,48 +27,21 @@ export default function Landing() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-black relative overflow-hidden">
-      {/* Animated background with bezier curves */}
-      <div className="absolute inset-0">
-        <motion.svg
-          className="absolute top-0 left-0 w-full h-full"
-          viewBox="0 0 1200 800"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        >
-          <motion.path
-            d="M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z"
-            fill="white"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          />
-          <motion.path
-            d="M0,500 Q400,300 800,500 T1200,500 L1200,800 L0,800 Z"
-            fill="gray"
-            opacity="0.5"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 3, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-          />
-        </motion.svg>
-      </div>
-
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-black">
       <motion.div 
         className="text-center max-w-2xl z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.h1 
-          className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+        <motion.div
+          className="mb-6"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          🌙 Lunai
-        </motion.h1>
+          <img src="/logo.svg" alt="Lunai" className="w-48 h-48 mx-auto" />
+        </motion.div>
         <motion.p 
           className="text-lg mb-12 text-gray-300"
           initial={{ opacity: 0 }}
@@ -90,10 +63,10 @@ export default function Landing() {
           >
             <Button
               onPress={() => handleButtonClick('physique')}
-              className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+              className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg flex flex-row items-center gap-2"
               size="lg"
-              startContent={<Dumbbell className="w-5 h-5" />}
             >
+              <Dumbbell className="w-5 h-5" />
               Physique
             </Button>
           </motion.div>
@@ -104,10 +77,10 @@ export default function Landing() {
           >
             <Button
               onPress={() => handleButtonClick('chat')}
-              className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+              className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg flex flex-row items-center gap-2"
               size="lg"
-              startContent={<MessageCircle className="w-5 h-5" />}
             >
+              <MessageCircle className="w-5 h-5" />
               Chat
             </Button>
           </motion.div>
