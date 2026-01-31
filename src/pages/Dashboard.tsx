@@ -52,10 +52,10 @@ export default function Dashboard() {
             </p>
           </div>
 
-          <div
-            onClick={() => handleRedirect('https://chat.lunai.monster')}
-            className="cursor-pointer p-6 border border-gray-700 rounded-lg hover:border-white transition-colors"
-          >
+           <div
+             onClick={() => handleRedirect('https://chat.lunai.monster', true)}
+             className="cursor-pointer p-6 border border-gray-700 rounded-lg hover:border-white transition-colors"
+           >
             <div className="flex items-center mb-4">
               <MessageCircle className="w-8 h-8 mr-3" />
               <h2 className="text-xl font-semibold">AI Chat</h2>
