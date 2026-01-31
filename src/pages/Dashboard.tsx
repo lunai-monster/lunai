@@ -2,6 +2,7 @@ import { useAuth } from '../providers/AuthProvider'
 import { api } from '../lib/api'
 import { Button } from '@heroui/react'
 import { Dumbbell, MessageCircle } from 'lucide-react'
+import { useEffect } from 'react'
 
 export default function Dashboard() {
   const { user, logout } = useAuth()
@@ -20,6 +21,17 @@ export default function Dashboard() {
       window.location.href = url
     }
   }
+
+  useEffect(() => {
+    const redirect = localStorage.getItem('intended_redirect')
+    if (redirect) {
+      const url = redirect === 'physique' 
+        ? 'https://physique.lunai.monster' 
+        : 'https://chat.lunai.monster'
+      handleRedirect(url, true)
+      localStorage.removeItem('intended_redirect')
+    }
+  }, [])
 
   return (
     <div className="min-h-screen p-8">
