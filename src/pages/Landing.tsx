@@ -40,7 +40,7 @@ export default function Landing() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <img src="/logo.svg" alt="Lunai" className="w-48 h-48 mx-auto" />
+          <img src="/logo.svg" alt="Lunai" className="w-48 h-48" />
         </motion.div>
         <motion.p 
           className="text-lg mb-12 text-gray-300"
